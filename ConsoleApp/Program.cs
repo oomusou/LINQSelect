@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ConsoleApp
@@ -10,19 +9,11 @@ namespace ConsoleApp
         {
             Enumerable
                 .Range(1, 3)
-                .MyMap(Double)
+                .Select(Double)
                 .ToList()
                 .ForEach(Console.WriteLine);
                 
             int Double(int x) => x * 2;
-        }
-        
-        private static IEnumerable<R> MyMap<T, R>(this IEnumerable<T> data, Func<T, R> func)
-        {
-            foreach (var item in data)
-            {
-                yield return func(item);
-            }
         }
     }
 }
