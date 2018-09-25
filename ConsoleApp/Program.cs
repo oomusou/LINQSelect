@@ -22,14 +22,10 @@ namespace ConsoleApp
         
         private static IEnumerable<int> MyMap(IEnumerable<int> data, Func<int, int> func)
         {
-            var result = new List<int>();
-
             foreach (var item in data)
             {
-                result.Add(func(item));
+                yield return func(item);
             }
-
-            return result;
         }
     }
 }
