@@ -20,7 +20,7 @@ namespace ConsoleApp
             int Double(int x) => x * 2;
         }
         
-        private static IEnumerable<int> MyMap(IEnumerable<int> data, Func<int, int> func)
+        private static IEnumerable<R> MyMap<T, R>(IEnumerable<T> data, Func<T, R> func)
         {
             foreach (var item in data)
             {
